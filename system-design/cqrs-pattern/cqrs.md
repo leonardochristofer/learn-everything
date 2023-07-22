@@ -1,4 +1,4 @@
-## What is CQRS Pattern in simple terms?
+# Introduction, what is CQRS Pattern in simple terms?
 
 In a traditional system, the same code is often used to handle both reading and writing data. CQRS breaks away from this approach and proposes having dedicated models and logic for reading data and separate models and logic for writing data. This separation allows each model to be optimized for its specific task, leading to improved performance, scalability, and flexibility.
 
@@ -26,6 +26,6 @@ In a traditional system, the same code is often used to handle both reading and 
 
 - Complex Data Synchronization: Handling data synchronization and ensuring consistency between read and write models can be challenging, especially in complex systems.
 
-## Conclusion
+## Conclusion:
 
 In conclusion, CQRS is a powerful pattern that can bring significant benefits in terms of performance, scalability, and flexibility in certain applications. However, it is essential to carefully consider the tradeoffs and determine if the benefits align with the specific needs of the application. Implementing CQRS should be based on the system's requirements and the potential for future growth and complexity.

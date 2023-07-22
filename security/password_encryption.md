@@ -1,4 +1,4 @@
-## Introduction
+# Introduction, what is password encryption?
 Password encryption is a critical aspect of security when it comes to storing and managing user passwords in computer systems. The primary goal of password encryption is to protect user credentials and sensitive information from unauthorized access, ensuring that even if the system's database is compromised, attackers cannot easily obtain the original passwords. To achieve this, passwords are transformed into a non-reversible form, making it challenging for attackers to reverse-engineer or "decrypt" them back to their original plaintext form.
 
 ## Why Password Encryption is Necessary:
@@ -124,6 +124,6 @@ Argon2 is a memory-hard and highly customizable password hashing algorithm desig
     
 - Implementation complexity: Argon2's flexibility and configurability can lead to implementation errors if not used correctly.
 
-## Conclusion
+## Conclusion:
 
 In summary, password encryption is crucial for protecting user credentials and ensuring the confidentiality of sensitive information. By using hashing, salting, and key derivation functions, organizations can significantly improve the security of their systems and user data. However, it's essential to keep in mind that encryption is just one layer of security, strong authentication practices and regular security audits is necessary for a more secure system. **Always remember, no system is secure.**

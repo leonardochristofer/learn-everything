@@ -1,8 +1,8 @@
-## What is Kubernetes in simple terms?
+# Introduction, what is Kubernetes in simple terms?
 
 Kubernetes is a platform used to manage, deploy, and scale containerized applications. It provides a set of tools and features that help automate the management of containerized workloads, making it easier to run and scale applications in a consistent and reliable manner.
 
-## The use of Kubernetes
+## The use of Kubernetes:
 
 - Container Orchestration: It takes care of deploying, starting, and stopping containers, ensuring they are always running as expected.
 
@@ -24,6 +24,6 @@ When you deploy your application to Kubernetes, **it automatically creates and m
 
 As your application grows and more users visit your website, **Kubernetes automatically scales up the number of containers to handle the increased traffic. When the demand decreases, Kubernetes scales down the containers to save resources and costs.**
 
-## Conclusion
+## Conclusion:
 
 In summary, **Kubernetes is a container management that automate the deployment, scaling, and management of your containerized applications.** It provides the foundation for running applications in a scalable, reliable, and efficient way, which is particularly valuable in modern application development.
