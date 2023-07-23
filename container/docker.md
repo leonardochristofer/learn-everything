@@ -1,4 +1,4 @@
-# Introduction. what is Docker in simple terms?
+# Introduction, what is Docker in simple terms?
 
 Docker is a platform that allows you to package, distribute, and run applications in isolated environments called "containers." Containers include everything needed to run an application, such as code, runtime, libraries, and dependencies. Docker makes it easy to **create, deploy, and manage applications consistently across different environments.**
 
