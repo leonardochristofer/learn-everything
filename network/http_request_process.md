@@ -20,6 +20,20 @@ You type "www.example.com" in your web browser and hit Enter. Your computer now 
 
 Your computer checks its local DNS cache, a temporary storage where it keeps previously resolved domain names and their corresponding IP addresses. If the IP address for "www.example.com" is already in the cache, great! The computer can proceed to access the website directly.
 
+##### DNS Cache:
+
+DNS caching is a mechanism used to store previously resolved DNS queries in a temporary storage area called the DNS cache. **The purpose of caching is to speed up future requests and reduce the need to repeatedly query the DNS hierarchy for frequently accessed domain names.**
+
+When a resolver receives a DNS response, it stores the domain name and its associated IP address in the cache. If the same domain name is requested again, the resolver can **quickly provide the IP address from the cache without going through the entire DNS resolution process.**
+
+##### Changing DNS Cache:
+
+The DNS cache is typically managed by the operating system. As an end-user, you can change the DNS cache behavior in some cases, but it might require administrative privileges on your device. The most common ways to change the DNS cache settings:
+
+- Flushing the DNS Cache: If you encounter DNS-related issues, you can flush the DNS cache to clear any outdated or incorrect entries. The method to flush the cache varies depending on the operating system. For example, on Windows, you can run the command ipconfig /flushdns in the Command Prompt.
+
+It's essential to exercise caution when modifying DNS cache settings, as incorrect configurations can lead to DNS-related issues or security vulnerabilities. In most cases, DNS caching is automatically managed by the system and requires no user intervention.
+
 #### Step 3: Recursive Query:
 
 If the IP address is not in the cache, your computer sends a request to a DNS resolver, which is like a phone book for domain names.
