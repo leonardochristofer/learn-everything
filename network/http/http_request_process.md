@@ -34,6 +34,26 @@ The DNS cache is typically managed by the operating system. As an end-user, you 
 
 It's essential to exercise caution when modifying DNS cache settings, as incorrect configurations can lead to DNS-related issues or security vulnerabilities. In most cases, DNS caching is automatically managed by the system and requires no user intervention.
 
+###### Unseen Perspectives: the Gap Between Developers and Users
+
+In most cases, users are not aware of such matters. For instance, when there's a need to change the IP for the same nameserver, users might unknowingly continue using the old IP. However, one potential solution to prevent this is by setting a DNS Cache Expiration Time.
+
+Changing the DNS cache on client devices (e.g., computers, smartphones) cannot be directly done from the server side. DNS caching is a client-side function, and it is the responsibility of the DNS resolver (e.g., ISP's DNS server, local DNS cache on the client device) to manage the caching of DNS records. Server-side changes cannot directly influence or control the DNS cache on client devices.
+
+The DNS cache on client devices is managed by the DNS resolver, which stores DNS records for a certain period (as specified by the TTL value in the DNS records) to improve DNS resolution performance and reduce the load on DNS servers. Once the TTL of a DNS record expires, the DNS resolver will automatically discard the cached record and fetch fresh DNS information from authoritative DNS servers when needed.
+
+While server administrators and website owners cannot directly change the DNS cache on client devices, there are some strategies they can employ to influence the DNS caching behavior and minimize the impact of changes:
+
+1. Lower TTL in Advance: Lower the Time-to-Live (TTL) value of the DNS records for the nameserver. Set the TTL to a relatively short duration, such as 15 minutes or even lower. This will reduce the amount of time that DNS resolvers and caches will retain the old IP address after the change.
+
+2. Monitor the traffic: It's not possible to simply shut down the old IP if there's a substantial amount of traffic flowing through it.
+
+3. Wait for Old TTL Expiry: Wait for the original TTL to expire. This ensures that DNS resolvers are now caching the updated shorter TTL value.
+
+4. Monitor DNS Propagation: After the IP change, monitor DNS propagation to verify that the updated IP address is being distributed correctly to DNS servers worldwide. DNS propagation may take some time due to caching by various DNS servers.
+
+By following these steps and planning the IP change carefully, you can minimize the impact on users and ensure a smooth transition to the new IP address for the same nameserver.
+
 #### Step 3: Recursive Query:
 
 If the IP address is not in the cache, your computer sends a request to a DNS resolver, which is like a phone book for domain names.
