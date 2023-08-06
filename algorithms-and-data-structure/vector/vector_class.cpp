@@ -45,6 +45,13 @@ public:
 	void pop_back(){
 		--size;
 	}
+
+	void erase(int index){
+		for(int i = index; i < size - 1; ++i){
+			data[i] = data[i + 1];
+		}
+		--size;
+	}
 	
 	int get_size(){
 		return size;
@@ -54,17 +61,27 @@ public:
 int main() {
 	Vector v;
 	
-	v.push_back(111);
-	
-	v.push_back(333);
+	v.push_back(111); // Index 0
 
-	std::cout << v.get(0) << "\n" << v.get(1) << "\n";
+	v.push_back(222); // Index 1
+
+	v.push_back(333); // Index 2
+
+	std::cout << v.get(0) << "\n" << v.get(1) << "\n" << v.get(2) << "\n"; // Get value on index
 	
-	std::cout << v.get_size() << "\n";
+	std::cout << v.get_size() << "\n"; // Get size
+
+	v.erase(1); // Erase index 1
+
+	std::cout << v.get_size() << "\n"; // Get size after erase
+
+	v.pop_back(); // Pop back
 	
-	v.pop_back();
-	
-	std::cout << v.get_size();
+	std::cout << v.get_size() << "\n"; // Get size after pop
+
+	for(int i = 0; i < v.get_size(); ++i){
+		std::cout << v.get(i) << "\n";
+	}
 	
 	return 0;
 }
