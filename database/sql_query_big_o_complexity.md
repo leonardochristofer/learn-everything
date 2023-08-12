@@ -39,6 +39,7 @@ SQL queries example: `SELECT * FROM orders o1, orders o2, orders o3 WHERE o1.cus
 Explanation: Queries with O(n^k) complexity have time complexities that grow as polynomial functions of the data size. The value of "k" determines the rate of growth. For example, O(n^3) signifies cubic growth, O(n^4) signifies quartic growth, and so on. These queries are less efficient than linear or logarithmic queries and become impractical for moderately large datasets. **This query performs a self-join on the 'orders' table three times, based on the 'customer_id' column. The time complexity is O(n^3) since it involves three nested loops.**
 
 ## Conclusion:
+
 Knowing of SQL query big O complexity makes me think about how to improve the queries and how to avoid worst-case scenarios, you can follow some best practices and optimization techniques but here are some tips to make SQL queries more efficient, ACCORDING TO MY RESEARCH, CMIIW:
 
 1. Use Indexes: Properly index the columns that are frequently used in search conditions, join clauses, and sorting. **Indexing helps reduce the number of rows that need to be scanned, leading to faster query execution.**
@@ -80,6 +81,7 @@ Partitioning is a powerful optimization technique, but its effectiveness depends
 You might ask something like I was, "So if I decide to make a partition to the table, I have to migrate the data from sales table to new table which is sales_partition_2023 and delete the entire 2023 sales data on sales table?" Yes, that's correct. 
 
 **When you implement table partitioning, you typically need to perform the following steps:**
+
 - **Create the Partitioned Table:** You create a new table, let's say 'sales_partition_2023', with the same structure as the original 'sales' table. However, the new table will be partitioned based on the 'year' column.
 
 - **Migrate Data:** You migrate the data for the year 2023 from the original 'sales' table to the new 'sales_partition_2023' table. This involves inserting the relevant records into the appropriate partition based on the 'year' column.
@@ -93,3 +95,9 @@ By following these steps, you'll have effectively partitioned the 'sales' table 
 12. Avoid Wildcard Searches: Avoid leading wildcard searches (e.g., WHERE name LIKE '%XYZ%'), as they may not effectively use indexes. **As the dataset grows, the time required to scan the entire table for potential matches increases significantly, leading to a slowdown in query performance.**
 
 By following these best practices and being mindful of query complexity, you can optimize SQL queries and improve their efficiency, leading to better database performance. **Always test the queries with different data sizes and profile the performance to ensure they meet your performance requirements.**
+
+Additional References:
+
+- https://www.datacamp.com/tutorial/sql-tutorial-query
+
+- https://www.kdnuggets.com/2017/08/write-better-sql-queries-definitive-guide-part-2.html/2
