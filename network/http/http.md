@@ -8,7 +8,7 @@ HTTP (Hypertext Transfer Protocol) is a protocol used for communication between 
     
 3. Your browser then displays the webpage or resource you requested, and you can interact with it on your screen.
 
-## HTTP/1, HTTP/1.1, and HTTP/2:
+## HTTP/1, HTTP/1.1, HTTP/2, and HTTP/3:
 
 HTTP has evolved over time, and different versions have been released. Here are the key differences, advantages, and tradeoffs between HTTP/1, HTTP/1.1, and HTTP/2:
 
@@ -78,6 +78,38 @@ HTTP has evolved over time, and different versions have been released. Here are 
 
 Despite these challenges, HTTP/2's performance benefits, including multiplexing, server push, and reduced latency, make it a compelling choice for modern web applications. However, developers need to be aware of the potential complexities and ensure they have the necessary knowledge to debug and implement HTTP/2 effectively.
 
+## HTTP/3:
+
+### Characteristics:
+
+- Major upgrade of HTTP. An important difference in HTTP/3 is that it runs on QUIC, a new transport protocol. QUIC is designed for mobile-heavy internet usage in which people carry smartphones that constantly switch from one network to another as they move about their day. This was not the case when the first Internet protocols were developed: devices were less portable and did not switch networks very often.
+
+- The use of QUIC means that HTTP/3 relies on the User Datagram Protocol (UDP), not the Transmission Control Protocol (TCP). Switching to UDP will enable faster connections and faster user experience when browsing online. 
+
+- The connection will always be encrypted. Previously, in HTTPS, the encryption and transport-layer connections occurred separately. TCP connections could carry data that was either encrypted or unencrypted, and the TCP handshake and TLS handshake were distinct events. However, QUIC sets up encrypted connections by default at the transport-layer —— application-layer data will always be encrypted.
+
+- QUIC accomplishes this by combining the two handshakes into one action, reducing latency since applications must wait for only one handshake to finish before sending data. It also encrypts metadata about each connection, including packet numbers and some other parts of the header, to help keep information about user behavior out of attackers’ hands. This feature was not included in HTTP/2. Encrypting this data helps keep actionable information about user behavior out of attackers’ hands.
+
+### Advantages:
+
+- Developing a workaround for the sluggish performance when a smartphone switches from WiFi to cellular data (such as when leaving the house or office)
+
+- Decreasing the effects of packet loss — when one packet of information does not make it to its destination, it will no longer block all streams of information (a problem known as “head-of-line blocking”)
+
+- Faster connection establishment: QUIC allows TLS version negotiation to happen at the same time as the cryptographic and transport handshakes
+
+- Zero round-trip time (0-RTT): For servers they have already connected to, clients can skip the handshake requirement (the process of acknowledging and verifying each other to determine how they will communicate)
+
+- More comprehensive encryption: QUIC’s new approach to handshakes will provide encryption by default — a huge upgrade from HTTP/2 — and will help mitigate the risk of attacks
+
+### Tradeoffs:
+
+- Compatibility problems. Not all browsers, servers, and proxies support the new protocols, and some may even degrade or block them.
+
+- Complexity, supporting more protocols means more resources and logic on the server side, as well as more code and libraries on the client side which increase the maintenance cost and the risk of bugs and vulnerabilities.
+
+- Consistency. Depending on the protocol used, the web application may behave differently or deliver different results (e.g: HTTP/1, HTTP/1.1, HTTP/2, and HTTP/3 have a different ways of handling prioritization, flow control, and error recovery) which could affect the user experience and the web analytics.
+
 ## Conclusion:
 
-In summary, HTTP is the protocol used for communication between web browsers and servers. HTTP/1.1 introduced improvements over HTTP/1 by using persistent connections and chunked transfer encoding. HTTP/2 further enhanced performance with binary protocol, multiplexing, and server push, leading to faster and more efficient page loading. However, each version comes with its own set of tradeoffs, which must be considered when choosing the appropriate version for a specific use case.
+In summary, HTTP is the protocol used for communication between web browsers and servers. Each version comes with its own set of tradeoffs, which must be considered when choosing the appropriate version for a specific use case. Compatibility, complexity, and consistency are the most important things to consider before implementing or choosing any protocols.
