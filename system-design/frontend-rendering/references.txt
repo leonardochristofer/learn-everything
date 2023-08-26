@@ -1,0 +1,9 @@
+https://clockwise.software/blog/client-side-vs-server-side-vs-pre-rendering/
+
+https://www.codemancers.com/blog/2023-03-17-difference-between-ssr-and-csr/
+
+https://stackoverflow.com/questions/72921550/when-is-server-side-rendering-a-bad-idea
+
+https://vercel.com/docs/incremental-static-regeneration
+
+https://tapajyoti-bose.medium.com/frontend-rendering-ssg-vs-isg-vs-ssr-vs-csr-when-to-use-which-1bf9f39ff07c
